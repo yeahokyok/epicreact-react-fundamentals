@@ -20,10 +20,10 @@
 
 <html>
   <body>
-    <div id="root"></div>
     <script type="module">
       // your JavaScript here
-      const root = document.getElementById('root')
+      const root = document.createElement('div')
+      document.body.append(root)
       const container = document.createElement('div')
       container.textContent = 'Hello World'
       container.className = 'container'
