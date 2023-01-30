@@ -5,10 +5,11 @@ import * as React from 'react'
 import '../box-styles.css'
 
 // add default value to className so we won't get undefined class name
-const Box = ({className = '', style, ...otherProps}) => {
+const Box = ({className = '', style, size, ...otherProps}) => {
+  const sizeClassName = size ? `box--${size}` : ''
   return (
     <div
-      className={`${className} box`}
+      className={`box ${className} ${sizeClassName}`}
       style={{fontStyle: 'italic', ...style}}
       {...otherProps}
     />
@@ -16,17 +17,17 @@ const Box = ({className = '', style, ...otherProps}) => {
 }
 
 const smallBox = (
-  <Box className="box--small" style={{backgroundColor: 'lightblue'}}>
+  <Box size="small" style={{backgroundColor: 'lightblue'}}>
     small lightblue box
   </Box>
 )
 const mediumBox = (
-  <Box className="box--medium" style={{backgroundColor: 'pink'}}>
+  <Box size="medium" style={{backgroundColor: 'pink'}}>
     medium pink box
   </Box>
 )
 const largeBox = (
-  <Box className="box--large" style={{backgroundColor: 'orange'}}>
+  <Box size="large" style={{backgroundColor: 'orange'}}>
     large orange box
   </Box>
 )
