@@ -8,7 +8,8 @@ function UsernameForm({onSubmitUsername}) {
   const handleSubmit = event => {
     event.preventDefault()
     let username = event.target.elements[0].value
-    onSubmitUsername(username)
+    let note = event.target.elements.noteInput.value
+    onSubmitUsername(note)
   }
   // 💰 Make sure to accept the `event` as an argument and call
   // `event.preventDefault()` to prevent the default behavior of form submit
@@ -29,6 +30,8 @@ function UsernameForm({onSubmitUsername}) {
       <div>
         <label>Username:</label>
         <input type="text" />
+        <label>note:</label>
+        <input id="noteInput" type="text" />
       </div>
       <button type="submit">Submit</button>
     </form>
